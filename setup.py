@@ -47,8 +47,8 @@ if minor_version % 2:
 requires = []
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
-        requires.append(get_require_version('trytond_%s' % dep))
-requires.append(get_require_version('trytond'))
+        requires.append('trytond_%s' % dep)
+requires.append('trytond')
 
 tests_require = [get_require_version('proteus')]
 dependency_links = []
@@ -59,7 +59,6 @@ if minor_version % 2:
 setup(name=name,
     version=version,
     description='Tryton module to add note types and authorizations',
-    long_description=read('README'),
     author='Coopengo',
     author_email='dev@coopengo.com',
     url='http://www.coopengo.com/',
